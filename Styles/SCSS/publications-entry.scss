@@ -1,0 +1,148 @@
+@import "../SCSS/library";
+@import "../SCSS/main-styles";
+@import "../SCSS/header-white";
+@import "../SCSS/footer";
+@import "../SCSS/publications-parth";
+
+.devider{
+    @include devider;
+    background-color: $gray-separator;
+}
+
+.corporation{
+    max-width: 1360px;
+    margin: 0 auto 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &__image--gdpr{
+        background-image: url(../../Assets/Images/Publications/Publication-2.png);
+        height: 500px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 12px;
+    }
+
+    &__card{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        &--center{
+            margin: 0 auto;
+        }
+    }
+
+    &__heading{
+        @include h2;
+        color: $dark-blue;
+        margin: 0;
+    }
+
+    &__date{
+        @include font-text (12px, 15px, $bold, $gray-text);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    &__paragraph{
+        @include paragraph;
+        margin: 0;
+    }
+    
+    &__small-heading{
+        @include h3;
+        color: $dark-blue-alt;
+        margin: 0;
+    }
+
+    &__list{
+        font-size: 18px;
+        line-height: 26px;
+        margin: 0;
+        &-item:first-child{
+            margin-bottom: 15px;
+        }
+        &-item::marker{
+            color: $red;
+        }
+    }
+
+    &__image--personalization{
+        width: 640px;
+        height: 398px;
+        background-image: url(../../Assets/Images/Publications/Illustration.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    &__image-description{
+        @include font-text (14px, 22px, null, $gray-text)
+    }
+
+    &__logo{
+        width: 42px;
+        height: 42px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $gray-bg;
+        border-radius: 12px;
+        &:hover{
+            background-color: $gray-bg-alt;
+        }
+    }
+
+    &__social-media{
+        display: flex;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: $xxlarge-down) {
+    .corporation{  
+        margin: 0 280px 60px;     
+    }
+}
+
+@media screen and (max-width: $xlarge-down) {
+    .corporation{
+        margin: 0 180px 60px;
+    }
+}
+
+@media screen and (max-width: $large-down) {
+    .corporation{
+        margin: 0 60px 60px;
+    }
+}
+
+@media screen and (max-width: $medium-down) {
+    .corporation{
+        margin: 30px 30px 60px;
+
+        &__image--gdpr{
+            height: 300px;
+        }
+
+        &__heading{
+            font-size: 20px;
+            line-height: 24px;
+        }
+        &__main-heading{
+            @include h2;
+        }
+        &__small-heading{
+            font-size: 16px;
+            line-height: 20px;
+        }
+        &__image--personalization{
+            width: 100%;
+            height: 196px;
+        }
+    }
+}
+

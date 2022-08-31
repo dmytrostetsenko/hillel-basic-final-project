@@ -1,0 +1,167 @@
+@import "../SCSS/library";
+@import "../SCSS/main-styles";
+@import "../SCSS/header-white";
+@import "../SCSS/footer";
+
+.portfolio{
+    max-width: 1360px;
+    margin: 0 auto 60px;
+    display: grid;
+    column-gap: 60px;
+    row-gap: 30px;
+
+    &__photo{
+        grid-row: 1 / 4;
+        grid-column: 1 / 2;
+        width: 400px;
+        height: 500px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		border-radius: 12px;
+        background-image: url(../../Assets/Images/Team/Team-5.png);
+    }
+
+    &__info{
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+    }
+
+    &__name{
+        @include hero;
+        @include red-text;
+        margin: 0 0 15px;
+    }
+
+    &__contacts{
+        display: flex;
+        gap: 26px;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        &-item{
+            position: relative;
+        }
+    }
+
+    &__contacts-item:not(:first-child)::before{
+		content: '';
+		position: absolute;
+		top: 8px;
+		left: -12px;
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background-color: $gray-separator;
+		vertical-align: middle;
+		display: inline-block;
+	}
+
+    &__position{
+        @include font-text (14px, 22px, null, $gray-text)
+    }
+
+    &__link{
+        color: $blue-regular;
+        text-decoration: none;
+    }
+
+    &__devider{
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+        @include devider;
+        background-color: $gray-separator;
+    }
+
+    &__description{
+        grid-row: 3 / 4;
+        grid-column: 2 / 3;
+        display: flex;
+        flex-direction: column;
+        gap: 30px
+    }
+
+    &__text{
+        @include paragraph;
+        margin: 0;
+    }
+
+    &__heading{
+        @include h3-caps;
+        color: $dark-blue;
+        margin: 0 0 15px;
+    }
+}
+
+@media screen and (max-width:$xxlarge-down) {
+    .portfolio{
+        margin: 0 180px 60px;
+    }
+}
+
+@media screen and (max-width:$xlarge-down){
+    .portfolio{
+        margin: 0 60px 60px;
+        &__photo{
+            width: 300px;
+            height: 375px;
+        }
+        &__contacts{
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        &__contacts-item:not(:first-child)::before{
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width:$large-down){
+    .portfolio{
+        column-gap: 30px;
+        grid-template-columns: 1fr 3fr;
+
+        &__photo{
+            grid-row: 1 / 2;
+            grid-column: 1 / 2;
+        }
+        &__info{
+            grid-row: 1 / 2;
+            grid-column: 2 / 3;
+            align-self: center;
+        }
+        &__devider{
+            grid-row: 2 / 3;
+            grid-column: 1 / 3;
+        }
+        &__description{
+            grid-row: 3 / 4;
+            grid-column: 1 / 3;
+        }
+    }
+}
+
+@media screen and (max-width:$medium-down){
+    .portfolio{
+        grid-template-columns: 1fr;
+        margin: 30px;
+        &__photo{
+            width: 100%;
+        }
+        &__info{
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            align-self: flex-start;
+        }
+        &__devider{
+            grid-row: 3 / 4;
+            grid-column: 1 / 2;
+        }
+        &__description{
+            grid-row: 4 / 5;
+            grid-column: 1 / 2;
+        }
+    }
+}

@@ -1,0 +1,120 @@
+@import "../SCSS/library";
+@import "../SCSS/main-styles";
+@import "../SCSS/header-white";
+@import "../SCSS/footer";
+
+.team{
+    text-align: center;
+
+    &__cards{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 60px;
+        padding: 60px 0;
+    }
+
+    &__card{
+        flex: 1 1 25%;
+    }
+
+    &__photo{
+		height: 400px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		border-radius: 12px;
+        margin-bottom: 15px;
+        &--alexander{
+            background-image: url(../../Assets/Images/Team/Team-1.png);
+        }
+        &--evgeny{
+            background-image: url(../../Assets/Images/Team/Team-2.png);
+        }
+        &--vladislav{
+            background-image: url(../../Assets/Images/Team/Team-3.png);
+        }
+        &--sergey{
+            background-image: url(../../Assets/Images/Team/Team-4.png);
+        }
+        &--oksana{
+            background-image: url(../../Assets/Images/Team/Team-5.png);
+        }
+        &--julia{
+            background-image: url(../../Assets/Images/Team/Team-6.png);
+        }
+    }
+    
+    &__link{
+        text-decoration: none;
+        text-align: left;
+        position: relative;
+        &:hover .team__name{
+            color: $red;
+            &::after{
+                z-index: 1;
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                background-color: $gray-bg-alt;
+                background-image: url(../../Assets/Images/Team/Vector-hover.png);
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+    }
+
+    &__name{
+        font-family: $bold;
+        color: $dark-blue;
+    }
+
+    &__circle{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 32px;
+	    height: 32px;
+        border-radius: 50%;
+        background-color: $gray-bg;
+	    background-image: url(../../Assets/Images/Team/Vector.png);
+	    background-repeat: no-repeat;
+	    background-position: center;
+    }
+
+    &__position{
+        @include font-text (14px, 22px, null, $gray-text)
+    }
+}
+
+@media screen and (max-width:$large-down) {
+    .team{
+        text-align: start;
+        &__card{
+            flex-basis: 45%;
+        }
+    }
+}
+
+@media screen and (max-width:$medium-down) {
+    .team{
+        margin: 0 30px;
+
+        &__main-heading{
+            @include h2;
+        }
+        &__photo{
+            max-height: 300px;
+        }
+        &__cards{
+            flex-direction: column;
+            gap: 30px;
+        }
+        &__card{
+            flex-basis: 100%;
+        }
+    }
+}

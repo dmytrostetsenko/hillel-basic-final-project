@@ -1,0 +1,49 @@
+@import "../SCSS/header";
+
+.navbar__language-link:not(.navbar__language-link--active),
+.hlegal-phone,
+.hlegal-adress{
+    color: $gray-text;
+}
+
+.facebook-logo--color{
+    fill: $gray-text;
+}
+
+.navbar__language-item:hover{
+    background-color: $gray-bg;
+}
+
+.menu__link{
+    &:hover{
+        border-bottom: 2px solid $blue-regular;
+    }
+    &:not(.menu__link--current){
+        color: $blue-regular;
+    }
+    &--current:hover{
+        border-bottom: 2px solid $red;
+    }
+}
+
+@media screen and (max-width: $medium-down){
+    .navbar--lighter{
+        background-color: $gray-bg;
+    }
+
+    .menu__humburger{
+        &:hover{
+            background-color: $gray-separator;
+        }
+
+        &-line{
+            background-color: rgba(50, 50, 100, 1);
+        }
+    }
+
+    .menu__link:hover {
+        border-bottom: none;
+    }
+}
+
+

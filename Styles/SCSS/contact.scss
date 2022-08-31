@@ -1,0 +1,110 @@
+@import "../SCSS/library";
+@import "../SCSS/main-styles";
+@import "../SCSS/header-white";
+@import "../SCSS/footer";
+@import "../SCSS/help";
+
+.devider{
+    @include devider;
+    background-color: $gray-separator;
+}
+
+.section{
+    max-width: 1360px;
+    margin: 0 auto 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+
+.contacts,
+.help{
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contacts{
+    font-size: 21px;
+    line-height: 30px;
+
+    &__adress{
+        color: $dark-blue;
+        margin: 0;
+    }
+
+    &__online{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    &__phone{
+        text-decoration: none;
+        color: $dark-blue-alt;
+    }
+
+    &__mail{
+        text-decoration: none;
+        color: $blue-regular;
+    }
+
+
+    &__social-media{
+        @include font-text(12px, 16px, $bold, $blue-regular);
+        letter-spacing: 1px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        text-decoration: none;
+        width: 155px;
+
+        .facebook-logo--size{
+            height: 38px;
+            width: 38px;
+        }
+        .facebook-logo--color{
+            fill: $blue-regular;
+        }
+
+        &:hover{
+            color: $red;
+        }
+        &:hover svg path{
+            fill: $red;
+        }
+    }
+
+
+    &__text{
+        width: 105px;
+    }
+
+}
+
+
+@media screen and (max-width: $xxlarge-down) {
+    .section{
+        margin: 0 180px 60px;
+    }
+}
+
+@media screen and (max-width: $xlarge-down) {
+    .section{
+        margin: 0 60px 60px;
+    }
+}
+
+@media screen and (max-width: $large-down) {
+    .contacts,
+    .help{
+        flex-basis: 100%;
+    }
+}
+
+@media screen and (max-width: $medium-down) {
+    .section{
+        margin: 60px 30px;
+    }
+}

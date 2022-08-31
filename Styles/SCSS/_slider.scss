@@ -1,0 +1,27 @@
+.slick-initialized .slick-slide {
+    display: flex;
+}
+
+.slick-dots {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0 0;
+    font-size: 0;
+    & .slick-active {
+        & button {
+            opacity: 1;
+        }
+    }
+    & button {
+        border: none;
+        width: 16px;
+        height: 16px;
+        background-color: $blue-regular;
+        opacity: 0.2;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+}

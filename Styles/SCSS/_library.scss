@@ -1,0 +1,84 @@
+@font-face {
+	font-family: Montserrat-regular;
+	src: url(../../Assets/Fonts/Montserrat/static/Montserrat-Regular.ttf);
+}
+@font-face {
+	font-family: Montserrat-bold;
+	src: url(../../Assets/Fonts/Montserrat/static/Montserrat-Bold.ttf);
+}
+$bg-gradient: linear-gradient(228.57deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%);
+$red: rgba(240, 20, 90, 1);
+$blue-regular: rgba(36, 163, 255, 1);
+$blue-hover: rgba(0, 133, 255, 1);
+$blue-active: rgba(0, 108, 207, 1);
+$gray-bg:rgba(245, 245, 250, 1);
+$gray-bg-alt:rgba(237, 237, 247, 1);
+$gray-text: rgba(179, 179, 186, 1);
+$gray-separator: rgba(230, 230, 240, 1);
+$dark-blue: #323264;
+$dark-blue-alt: #46466E;
+$dark-blue-soft: #686887;
+$xxlarge-down: 1920px;
+$xlarge-down: 1440px;
+$large-down: 1024px;
+$medium-down: 768px;
+$small-down: 375px;
+$regular: Montserrat-regular;
+$bold: Montserrat-bold;
+@mixin font-text($size, $height, $family, $color) {
+	font-size: $size;
+	line-height: $height;
+	font-family: $family;
+	color: $color;
+}
+@mixin hero {
+    font-size: 38px;
+    line-height: 46px;
+    font-family: $bold;
+}
+@mixin h2 {
+    font-size: 30px;
+    line-height: 37px;
+    font-family: $bold;
+}
+@mixin h3 {
+    font-size: 22px;
+    line-height: 27px;
+    font-family: $bold;
+}
+@mixin h3-caps {
+    font-size: 14px;
+    line-height: 17px;
+    font-family: $bold;
+    text-transform: uppercase;
+}
+@mixin paragraph {
+    line-height: 26px;
+}
+@mixin list {
+    font-size: 18px;
+    line-height: 26px;
+}
+@mixin devider {
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    margin: 0;
+}
+@mixin red-text {
+    background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@mixin button {
+    padding: 18px 30px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0px 0px 20px rgba(36, 163, 255, 0.5);
+    font-family: $bold;
+    color:white;
+    background-color: $blue-regular;
+    cursor: pointer;
+}

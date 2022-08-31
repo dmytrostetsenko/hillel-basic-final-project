@@ -1,0 +1,124 @@
+@import "../SCSS/library";
+@import "../SCSS/main-styles";
+@import "../SCSS/header";
+@import "../SCSS/footer";
+@import "../SCSS/promo";
+@import "../SCSS/services-companies";
+@import "../SCSS/publications-parth";
+@import "../SCSS/slider";
+
+.main-header{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: center;
+	min-height: 100vh;
+	background-image: url(../../Assets/Images/MainPage/Symbol.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.heading__text{
+	@include hero;
+    color: white;
+	margin: 0 30px;
+}	
+
+.more__button{
+	width: 42px;
+	height: 42px;
+    margin: 0 auto;
+	border: 1px solid rgba(255, 255, 255, 1);
+	border-radius: 50%;
+	background-color: transparent;
+	background-image: url(../../Assets/Images/MainPage/Vector.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-bottom: 30px;
+	&:hover{
+		background-image: url(../../Assets/Images/MainPage/Vector-hover.png);
+		border: 1px solid $red;
+	}
+}
+
+.team{
+	margin: 60px 0;
+
+	&__card{
+		max-width: 1600px;
+		display: flex;
+		justify-content: start;
+	}
+
+	&__photo{
+        max-width: 400px;
+		border-radius: 12px 0 0 12px;
+        object-fit: cover;
+	}
+
+	&__description{
+		padding: 30px;
+		background-color: $gray-bg;
+		border-radius: 0 12px 12px 0;
+	}
+	
+	&__link{
+        @include h3-caps;
+        color: $blue-regular;
+		text-decoration: none;
+
+		&::after{
+			content: ' \203A';
+			font-size: 20px;
+			vertical-align: baseline;
+		}
+	}
+
+	&__citate{
+		margin: 5px 0 30px;
+		@include hero;
+		background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	&__teamate-name{
+		display: block;
+        color: $gray-text;
+        font-family: $bold;
+	}
+
+	&__teamate-position{
+		margin-top: 5px;
+		@include font-text(14px, 22px, null, $gray-text)
+	}
+}
+
+@media screen and (max-width: $large-down) {
+	.team__card{
+		flex-direction: column;
+	}
+	.team__photo{
+		border-radius: 12px 12px 0 0;
+        max-width: 100%;
+		height: 500px;
+        width: auto;
+	}
+	.team__description{
+		border-radius: 0 0 12px 12px;
+	}
+}
+@media screen and (max-width:$medium-down) {
+	.team__description,
+	.team__photo{
+		margin: 0 30px;
+	}
+    .team__citate{
+        @include h2
+    }
+}
+
+
+

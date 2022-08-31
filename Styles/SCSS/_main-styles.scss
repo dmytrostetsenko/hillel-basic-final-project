@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @include font-text(16px, 20px, $regular, black);
+}
+
+.container {
+  max-width: 1720px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.wrapper--gray {
+  background-color: rgba(245, 245, 250, 1);
+}
+
+.wrapper--gradient{
+	min-height: 100vh;
+	background-image: $bg-gradient;
+	padding-bottom: 60px;
+	border-radius: 0px 0px 12px 12px;
+}
+
+.box--gray{
+    margin: 0 20px;
+    height: 10px;
+    background-color: rgba(202, 202, 219, 1);
+    border-radius: 0px 0px 12px 12px;
+}
+
+.box--light-gray{
+    margin: 0 40px;
+    height: 10px;
+    background-color: rgba(231, 231, 242, 1);
+    border-radius: 0px 0px 12px 12px;
+    margin-bottom: 60px;
+}
+
+.main-heading{
+  @include hero;
+  @include red-text;
+  margin: 0;
+}
